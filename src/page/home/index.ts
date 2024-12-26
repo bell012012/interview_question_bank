@@ -1,0 +1,81 @@
+export const OriginalDataList = [
+    {
+        title: "HTML",
+        isTitleOpen: false,
+        text: [
+            { name: "HTML5Canvas元素有什么用？", content: "Canvas 元素用于在网页上绘制图形，HTML5 的 canvas 元素使用 JavaScript 在网页上绘制图像。 ", isContentOpen: false },
+            { name: "HTML5存储类型有什么区别？", content: "HTML5 能够本地存储数据，在之前都是使用 cookies 使用的。HTML5 提供了下面两种本地存储方案： localStorage 用于持久化的本地存储，数据永远不会过期，关闭浏览器也不会丢失。 sessionStorage 同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。", isContentOpen: false },
+            { name: "HTML5有哪些新特性", content: "1. 语义化标签 如header footer nav2. 增强型表单：input 的多个 type3. 新增表单元素：datalist、keygen、output4. 新增表单属性：placehoder、required、min 和 max5. 音频视频：audio、video6. canvas7. 地理定位8. 拖拽9. 本地存储：localStorage - 没有时间限制的数据存储；sessionStorage - 针对一个 session 的数据存储，当用户关闭浏览器窗口后，数据会被删除10. 新事件：onresize、ondrag、onscroll、onmousewheel、onerror、onplay、onpause11. WebSocket：单个 TCP 连接上进行全双工通讯的协议", isContentOpen: false },
+        ],
+    },
+    {
+        title: "CSS",
+        isTitleOpen: false,
+        text: [
+            { name: "CSS的继承性有哪些", content: "可继承的样式：font-size, font-family, color，ul，li，dl，dt，dd；不可继承的样式：border, padding, margin, width, height", isContentOpen: false },
+            { name: "CSS3新增伪类有那些?", content: "p:first-of-type 选择属于其父元素的首个元素的每个元素。p:last-of-type 选择属于其父元素的最后元素的每个元素。p:only-of-type 选择属于其父元素唯一的元素的每个元素。p:only-child 选择属于其父元素的唯一子元素的每个元素。p:nth-child(2) 选择属于其父元素的第二个子元素的每个元素。:enabled:disabled 控制表单控件的禁用状态。:checked，单选框或复选框被选中。:before在元素之前添加内容，也可以用来做清除浮动:after在元素之后添加内容", isContentOpen: false },
+            { name: "css盒子模型包含哪些", content: "1. 内容content2. 内边距padding3. 边框border4. 外边距margin", isContentOpen: false },
+            { name: "CSS3有哪些新特性", content: "1. 选择器  如伪选择器和伪元素2. 背景和边框3. 文本效果4. 2D/3D转换5. 动画/过渡6. 多列布局（flex）7. 用户界面（@media）", isContentOpen: false },
+            { name: "display:none与visibility:hidden 的区别是什么？", content: "display : none 隐藏对应的元素，不占有位置，会引起回流+重绘visibility:hideen 隐藏对应的元素，还占有原先的位置，只会引起重绘overflow:hidden     溢出隐藏 可以解决margin塌陷的问题和清除浮动功能", isContentOpen: false },
+        ],
+    },
+    {
+        title: "JS",
+        isTitleOpen: false,
+        text: [
+            { name: "Es6有哪些新特性", content: "1. let和const2. 解构3. 展开运算符4. 模板字符串5. 箭头函数6. Class类对象的简化赋值", isContentOpen: false },
+        ],
+    },
+    {
+        title: "VUE",
+        isTitleOpen: false,
+        text: [
+            { name: "Vue中的v-model双向数据绑定的原理", content: "数据层（Model） 视图层（View） 业务逻辑层（ViewModel） vue2中通过v-bind绑定属性，当属性数据发生变化时，表单内容跟着变化，使用v-on监听input事件，当页面数据发生变化是，通过event事件处理来进行双向数据绑定Vue2数据双向绑定原理的实现 Vue2采用数据劫持并结合发布者-订阅者模式的方式，通过ES6的object.defineProperty()方法去劫持各个属性的setter/getter方法，在数据发生变化的时候，发布信息给订阅者，触发相应的监听回调。在 vue3 中modelValue属性和监听update:modelValue事件，事件为 $emit('update:modelValue')proxy代理，get和set", isContentOpen: false }, 
+            { name: "v-if和v-show的区别", content: "v-if是频繁的向DOM树内添加或者删除DOM元素；v-show是通过设置DOM元素的display样式属性控制显隐；", isContentOpen: false }, 
+            { name: "v-for key的尽量不要用index", content: "使用id的唯一性能确保虚拟DOM的更新操作尽可能高效，当数据发生变化时，如果元素被添加、删除或移动，原来的索引值会发生变化，导致key与实际内容不匹配，可能会引发渲染错误或性能下降。列表重新排序可能引发错误：使用索引作为key可能会误导Vue认为只是元素位置的简单更新，而不是内容的真正变化。", isContentOpen: false }, 
+            { name: "v-for和v-if为什么不可以一起使用", content: "`v-for`和`v-if`确实可以一起使用，`v-for`的优先级高于`v-if`，这意味着`v-for`会先执行，生成元素，然后`v-if`根据条件对这些元素进行过滤。如果`v-for`循环的元素全部不满足`v-if`的条件，那么页面上将不会有任何内容被渲染出来。可以将`v-if`放在父级元素上", isContentOpen: false }, 
+            { name: "Vue中的路由", content: "申明式路由：router-link to  函数式路由 this.$router.push   this.$router.back()   $router 是路由操作对象，只写对象   $route是路由信息对象，只读对象query语法：this.$router.push({path:'地址',query:{id:'123'}}); 这是传递参数this.$route.query.id； 这是接受参数params语法：this.$router.push({name:'地址',params:{id:'123'}}); 这是传递参数this.$route.params.id; 这是接受参数query刷新不丢，类似于get  params类似于post", isContentOpen: false }, 
+            { name: "vue的生命周期有哪些", content: "beforeCreate -> 使用 setup()created -> 使用 setup()beforeMount -> onBeforeMountmounted -> onMountedbeforeUpdate -> onBeforeUpdateupdated -> onUpdatedbeforeDestroy -> onBeforeUnmountdestroyed -> onUnmountederrorCaptured -> onErrorCapturedkeep-alive 包裹时，那该组件就多了2个生命周期，activated 和diactivated", isContentOpen: false }, 
+            { name: "keep-alive", content: "activated 相当于挂载 与 deactivated  相当于销毁", isContentOpen: false }, 
+            { name: "父组件和子组件之间的生命周期", content: "执行顺序如下：先走父组件的：beforeCreate ，created ，beforeMount 再走子组件的：beforeCreate ，created ，beforeMount，mounted 多个子组件也是，先走完上面四个然后再走父组件的：mounted beforeCreate ：拿不到dom节点和data数据created ：拿不到dom节点，可以拿到data数据先走同步，再走异步，setTimeout和setInterval和nextTick 都是异步", isContentOpen: false }, 
+            { name: "父子组件通讯方式有哪些", content: "父子通讯：props和￥$emit    兄弟通讯：bus和vuex  跨级通讯：bus和vuex和provide/inject", isContentOpen: false }, 
+            { name: "父组件和子组件传参问题", content: "父组件可以props传参给子组件，也可以使用ref操作节点传参，子组件可以使用$emit传过去给父组件修改属性，不可以直接在子组件修改父组件的属性，因为子组件没法ref拿到父组件的节点。", isContentOpen: false }, 
+            { name: "computed和watch的区别", content: "computed具有缓存的特性，依赖某个属性的变化，一般用于同步的计算或者格式化数据的场景watch不具有缓存属性，不依赖某个属性的变化，可以处理一些数据或者派发事件并同步或者异步执行", isContentOpen: false }, 
+            { name: "vue3中 watch、watchEffect区别", content: "1、watch是惰性执行，也就是只有监听的值发生变化的时候才会执行，但是watchEffect不同，每次代码加载watchEffect都会执行（忽略watch第三个参数的配置，如果修改配置项也可以实现立即执行）2、watch需要传递监听的对象，watchEffect不需要3、watch只能监听响应式数据：ref定义的属性和reactive定义的对象，如果直接监听reactive定义对象中的属性是不允许的（会报警告），除非使用函数转换一下。其实就是官网上说的监听一个getter4、watchEffect如果监听reactive定义的对象是不起作用的，只能监听对象中的属性。", isContentOpen: false }, 
+            { name: "$nextTick()的方法", content: "在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM", isContentOpen: false }, 
+        ],
+    },
+    {   
+        title: "REACT",
+        isTitleOpen: false,
+        text: [
+            
+        ],
+    },
+    {
+        title: "其他",
+        isTitleOpen: false,
+        text: [
+            { name: "节流与防抖的本质", content: "这两个东西都以闭包的形式存在，它们通过对事件对应的回调函数进行包裹、以自由变量的形式缓存时间信息，最后用 setTimeout 来控制事件的触发频率。", isContentOpen: false },
+            { name: "什么是节流throttle（事件节流）", content: "在某段时间内，不管你触发了多少次回调，我都只认第一次，并在计时结束时给予响应。", isContentOpen: false },
+            { name: "什么是防抖debounce（事件防抖）", content: "在某段时间内，不管你触发了多少次回调，我都只认最后一次。", isContentOpen: false },
+            { name: "前端性能优化", content: "1、HTTP减少请求次数减少单次请求所花费的时间2、如多张小图片合并制作一张精灵图，利用CSS -background-position调整图片显示位置3、图片尽量使用jpg格式4、使用节流和防抖", isContentOpen: false },
+            { name: "后端要一次性返回我10万条数据", content: "1， 使用定时器分组分批分堆依次渲染（定时加载、分堆思想）2，使用requestAnimationFrame替代定时器去做渲染3，搭配分页组件，前端进行分页（每页展示一堆，分堆思想）4，表格滚动触底加载（滚动到底，再加载一堆）", isContentOpen: false },
+            { name: "什么是递归，递归和循环的区别", content: "一个函数直接或间接调用自身的一种方法，需要一个递归出口", isContentOpen: false },
+            { name: "闭包", content: "闭包就是一个fn能够访问到另一个fn函数内申明的变量，形成的闭环，就叫闭包", isContentOpen: false },
+            { name: "回调函数", content: "回调函数就是：将一个函数作为参数，传入到另外一个函数内，当那个函数执行完后，再执行传进去的函数，这个过程就叫做回调函数", isContentOpen: false },
+            { name: "箭头函数的理解", content: "箭头函数也被称为 lambda函数，相对于传统的函数声明和函数表达式，箭头函数更加简洁，没有自己的this对象，this指向在定义时确定，不是在运行时确定，无法使用call apply  bind方法来改变this指向，箭头函数的return可以省略默认返回最后一个表达式", isContentOpen: false },
+            { name: "深浅拷贝", content: "前提为拷贝类型为引用类型的情况下：浅拷贝是拷贝一层，属性为对象时，浅拷贝是复制，两个对象指向同一个地址深拷贝是递归拷贝深层次，属性为对象时，深拷贝是新开栈，两个对象指向不同的地址常见的深拷贝方式有：JSON.stringify() 循环递归", isContentOpen: false },
+            { name: "px rpx rem em vh vw 的区别是什么？", content: "px 是绝对单位长度，其他的是相对单位长度rpx 微信小程序规定屏幕的宽度为750rpx  如手机屏幕宽度为375px 即1rpx=0.5pxrem 参照根元素hmlt 的font-sizi  如设置10px  那么1rem=10pxem  参照父元素的font-sizi  如父元素的font-sizi为5em 根元素html设置的为font-sizi=10px 那么子元素的1em=50pxvh vw 即屏幕分成100份  Viewport 视口pc端，Viewport指的是浏览器的可视区域移动端，涉及3个视口：Layout viewport（布局视口）、Visual viewport（视觉视口）、Ideal viewport（理想视口）。Viewport指的是其中的Layout Viewport。根据CSS3规范，视口单位包括以下4个vw: 1 vw等于视口宽度的1%vh: 1 vh等于视口高度的1%vmin: 选取vw和vh中最小的那个vmax: 选取vw和vh中最大的那个", isContentOpen: false },
+            { name: "状态码", content: "消息类（1开头） 成各类（2开头）重定向（3开头）请求错误（4开头）服务器错误（5开头）", isContentOpen: false },
+            { name: "后台系统的权限管理怎么设置", content: "前端方案：把所有路由信息在前端配置，通过路由守卫要求用户登录，用户登录后根据角色过滤出路由表，配置一个asyncRoutes数组，需要认证的页面在其路由的meta中添加一个roles字段，等获取用户角色之后取两者的交集，若结果不为空则说明可以访问，剩下的路由就是该用户能访问的页面，通过router.addRoutes(accessRoutes)方式动态添加路由后端方案：把所有页面路由信息存在数据库中，用户登录的时候根据角色查询得到能访问的所有页面路由信息返回给前端，前端再通过addRoutes动态添加路由信息按钮权限：控制实现一个指令，v-permission，将按钮要求角色通过值传给v-permission指令，在指令的mouned钩子中可以判断当前用户校色和按钮是否存在交集，有则保留按钮，没有移除按钮", isContentOpen: false },
+            { name: "vue后台管理系统如何设置主题", content: "1. 创建一个全局的CSS变量文件（theme.css），定义了不同主题对应的颜色值2. 在App.vue或者根组件中，添加一个按钮或者菜单项，供用户切换主题。当点击该按钮时，会调用一个函数来更新主题。3.编写一个名为changeTheme()的函数，用于动态修改全局的CSS变量。", isContentOpen: false },
+            { name: "前端如何实现token的无感刷新", content: "方案一：后端返回过期时间，前端每次请求就判断token的过期时间，如果快到过期时间，就去调用刷新token接口。缺点：需要后端额外提供一个token过期时间的字段；使用了本地时间判断，若本地时间被篡改，特别是本地时间比服务器时间慢时，拦截会失败。方法二：写个定时器，然后定时刷新token接口。缺点：浪费资源，消耗性能,不建议采用。方法三：在请求响应拦截器中拦截，判断token 返回过期后，调用刷新token接口。service.interceptors.response", isContentOpen: false },
+            { name: "什么是electron主进程?", content: "electron 运行package.json的main脚本的进程被称作主进程每个electron只有一个主进程用于管理原生GUI， 典型的窗口（BrowserWindow、Tray、Dock、Menu）主进程用于创建渲染进程主进程控制应用的生命周期electron项目的主进程只有一个, 主进程的执行代码需要写到main.js中, 起到统筹全局的作用", isContentOpen: false },
+            { name: "Web Worker，Service Worker和Worklet的区别?", content: "Web Worker，Service Worker和Worklet都是在与浏览器页面线程不同的线程上运行的脚本。它们的不同之处在于它们的使用位置以及启用这些用例所必须具备的功能。worklet与浏览器的渲染管道挂钩，使我们能够对浏览器的渲染过程（例如样式和布局）进行低级访问。service worker是浏览器和网络之间的代理。通过拦截文档发出的请求，service worker可以将请求重定向到缓存，从而实现脱机访问。Web Worker是通用脚本，使我们能够从页面线程上卸载处理器密集型worker。", isContentOpen: false },
+            { name: "什么是PWA？", content: "PWA 全称Progressive Web Apps(渐进式Web应用程序)，旨在使用现有的web技术提供用户更优的使用体验。可靠（Reliable）即使在不稳定的网络环境下，也能瞬间加载并展现能够借助 Service Worker 在离线或者网络较差的情况下正常访问快速响应（Fast）快速响应，并且有平滑的动画响应用户的操作粘性(Engaging)像设备上的原生应用，具有沉浸式的用户体验，用户可以添加到桌面", isContentOpen: false },
+            { name: "cdn如何快速获取html和css和js", content: "更新你的DNS设置，使得你的域名指向CDN而不是原始服务器。", isContentOpen: false },
+            { name: "WebSocket的api有哪些", content: "readyState 状态 onopen 连接成功后的回调函数onmessage 从服务器接受到信息时的回调函数onclose 连接关闭后的回调函数onerror 连接失败后的回调函数bufferedAmount 未发送至服务器的字节数send() 对要传输的数据进行排队close() 关闭当前链接", isContentOpen: false },
+        ],
+    },
+] 
