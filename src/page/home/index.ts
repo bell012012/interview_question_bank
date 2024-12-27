@@ -1,6 +1,6 @@
 export const OriginalDataList = [
     {
-        title: "HTML3",
+        title: "HTML",
         isTitleOpen: false,
         text: [
             { name: "HTML5Canvas元素有什么用？", content: "Canvas 元素用于在网页上绘制图形，HTML5 的 canvas 元素使用 JavaScript 在网页上绘制图像。 ", isContentOpen: false },
