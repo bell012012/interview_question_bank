@@ -92,27 +92,34 @@ const toggleContent = (index: number, textIndex: number) => {
 
 const handleSearch = (value: string) => {
     state.selectedContent = "";
+    state.selectedTextItem = null;
     if (!value.trim()) {
         state.dataList = JSON.parse(JSON.stringify(state.originalDataList));
         return;
     }
-    let firstMatchedContent = "";
-    state.dataList.forEach(item => {
+
+    let firstMatchedTextItem: TextItem | null = null;
+    state.dataList.forEach((item) => {
         const titleMatch = item.title.toLowerCase().includes(value.toLowerCase());
         item.text = item.text.filter((textItem: TextItem) =>
             textItem.name.toLowerCase().includes(value.toLowerCase())
         );
+
         if (item.text.length > 0 || titleMatch) {
             item.isTitleOpen = true;
-            if (!firstMatchedContent && item.text.length > 0) {
-                firstMatchedContent = item.text[0].content;
-                item.text[0].isContentOpen = true;
+
+            if (!firstMatchedTextItem && item.text.length > 0) {
+                firstMatchedTextItem = item.text[0];
+                firstMatchedTextItem.isContentOpen = true;
             }
         } else {
             item.isTitleOpen = false;
         }
     });
-    state.selectedContent = firstMatchedContent;
+    if (firstMatchedTextItem) {
+        state.selectedTextItem = firstMatchedTextItem;
+        state.selectedContent = (firstMatchedTextItem as TextItem).content;
+    }
 };
 
 const clearInput = () => {
