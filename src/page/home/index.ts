@@ -76,6 +76,7 @@ export const OriginalDataList = [
             { name: "什么是PWA？", content: "PWA 全称Progressive Web Apps(渐进式Web应用程序)，旨在使用现有的web技术提供用户更优的使用体验。可靠（Reliable）即使在不稳定的网络环境下，也能瞬间加载并展现能够借助 Service Worker 在离线或者网络较差的情况下正常访问快速响应（Fast）快速响应，并且有平滑的动画响应用户的操作粘性(Engaging)像设备上的原生应用，具有沉浸式的用户体验，用户可以添加到桌面", isContentOpen: false },
             { name: "cdn如何快速获取html和css和js", content: "更新你的DNS设置，使得你的域名指向CDN而不是原始服务器。", isContentOpen: false },
             { name: "WebSocket的api有哪些", content: "readyState 状态 onopen 连接成功后的回调函数onmessage 从服务器接受到信息时的回调函数onclose 连接关闭后的回调函数onerror 连接失败后的回调函数bufferedAmount 未发送至服务器的字节数send() 对要传输的数据进行排队close() 关闭当前链接", isContentOpen: false },
+            { name: "什么是基本类型和引入类型数据", content: "基本类型:存储在栈（Stack）中，值直接保存在变量中,不可变（值本身不会改变，重新赋值会创建新的值）,按值传递（变量的值会被复制，而不是引用）,string,number,boolean,null,undefined,bigint,symbol, 引用类型:存储在堆（Heap）中，变量保存的是对象的内存地址（引用）,可变（对象内容可以修改，引用地址不变）,按引用传递（变量指向相同的内存地址，修改会影响原对象）,object,array,function,class,map/set,总结基本类型 适用于简单值（如数字、布尔值）。引用类型 适用于复杂数据结构（如对象、数组、函数）。 理解它们的存储和操作机制有助于写出更高效和正确的代码。", isContentOpen: false },
         ],
     },
 ] 
