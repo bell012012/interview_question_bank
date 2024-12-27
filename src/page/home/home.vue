@@ -16,7 +16,7 @@
                     <div v-if="item.isTitleOpen" class="textBox">
                         <div class="textItem" v-for="(textItem, textIndex) in item.text" :key="textItem.name"
                             @click.stop="toggleContent(index, textIndex)">
-                            <p>{{ textItem.name }}</p>
+                            <p :class="{ 'selected': state.selectedTextItem === textItem }">{{ textItem.name }}</p>
                         </div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
 
             <!-- rightBox 区域 -->
             <div class="rightBox">
-                <p v-if="state.selectedContent">{{ state.selectedContent }}</p>
+                <p v-if="state.selectedContent" v-html="state.selectedContent"></p>
             </div>
         </div>
     </div>
@@ -54,6 +54,7 @@ const state = reactive({
     selectedContent: "",
     originalDataList: OriginalDataList,
     dataList: [] as DataItem[],
+    selectedTextItem: null as TextItem | null,
 });
 state.dataList = JSON.parse(JSON.stringify(state.originalDataList));
 watch(
@@ -84,8 +85,9 @@ const toggleContent = (index: number, textIndex: number) => {
             textItem.isContentOpen = false;
         }
     });
-    item.text[textIndex].isContentOpen = !item.text[textIndex].isContentOpen;
+    item.text[textIndex].isContentOpen = true
     state.selectedContent = item.text[textIndex].isContentOpen ? item.text[textIndex].content : "";
+    state.selectedTextItem = item.text[textIndex];
 };
 
 const handleSearch = (value: string) => {
@@ -247,6 +249,11 @@ const clearInput = () => {
                 word-wrap: break-word;
                 word-break: break-word;
                 overflow-wrap: break-word;
+            }
+
+            .selected {
+                border-color: #3498db;
+                color: #3498db;
             }
         }
     }
