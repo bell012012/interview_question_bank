@@ -24,6 +24,14 @@ export const OriginalDataList = [
         isTitleOpen: false,
         text: [
             { name: "Es6有哪些新特性", content: "1. let和const<br>2. 解构<br>3. 展开运算符<br>4. 模板字符串<br>5. 箭头函数<br>6. Class类对象的简化赋值", isContentOpen: false },
+            { name: "this 的指向？", content: "1.普通函数：指向全局对象（window 或 undefined 严格模式下）。<br>2.方法调用：指向调用该方法的对象。<br>3.构造函数：指向新创建的对象。<br>4.箭头函数：this 由定义时的上下文决定，不可改变。", isContentOpen: false },
+            { name: "原型链和继承的实现？", content: "1.原型链：每个对象都有一个内部属性 [[Prototype]] 指向其原型，直到顶层的 null。<br>2.继承实现方式：class 关键字,构造函数结合 Object.create", isContentOpen: false },
+            { name: "call()、apply()、bind() 的区别", content: "1.call立即执行,参数逐个传入,函数执行的返回值<br>2.apply立即执行,参数以数组形式传入,函数执行的返回值<br>3.bind不立即执行,参数逐个传入（返回新函数时可以传递参数）,返回绑定后的新函数", isContentOpen: false },
+            { name: "every()和some()", content: "1.every检测数组中的每个元素是否都满足指定条件，只有全部满足时返回true<br>2.some检测数组中的至少一个元素是否满足指定条件，满足时立即返回true", isContentOpen: false },
+            { name: "let、const和var的区别", content: "特性	var	let	const<br>1.作用域:函数作用域,块作用域,块作用域。<br>2.变量提升:	是，提升后值为undefined，是，但不会初始化，是，但不会初始化。<br>3.可修改性:可以重新赋值和重新声明，可以重新赋值，不可重新声明，不可重新赋值，不可重新声明。<br>4.初始值要求:可选，可选，必须初始化。<br>5.绑定特性:不绑定到当前作用域，绑定到当前作用域，绑定到当前作用域。", isContentOpen: false },
+            { name: "forEach和map的区别", content: "forEach()方法会针对每一个元素执行提供的函数，对数据的操作会改变原数组，该方法没有返回值；<br>map()方法不会改变原数组的值，返回一个新数组，新数组中的值为原数组调用函数处理之后的值；", isContentOpen: false },
+            { name: "Promise详解", content: "1.Promise有以下三种状态:pending（进行中）,fulfilled（已完成/已成功）,rejected（已失败）<br>2.Promise方法:<br>2.1:then()用于处理resolve的结果<br>2.2:catch()用于处理 reject 的结果。<br>2.3:finally()无论 resolve 还是 reject 都会执行。", isContentOpen: false },
+            { name: "同步与异步的分类和宏任务与微任务", content: "1.异步任务有：setTimeout，setInterval，Promise，Async/Await是同步/异步结合。<br>2.宏任务（Macro Task）包括：setTimeout、setInterval、setImmediate、I/O 等。宏任务会被添加到主任务队列。<br>3.微任务（Micro Task）包括：nextTick、Promise.then、MutationObserver、queueMicrotask。微任务的优先级高于宏任务，主线程每次执行一个宏任务后，会先清空微任务队列。", isContentOpen: false },
         ],
     },
     {
@@ -67,7 +75,7 @@ export const OriginalDataList = [
             { name: "闭包", content: "闭包就是一个fn能够访问到另一个fn函数内申明的变量，形成的闭环，就叫闭包", isContentOpen: false },
             { name: "回调函数", content: "回调函数就是：将一个函数作为参数，传入到另外一个函数内，当那个函数执行完后，再执行传进去的函数，这个过程就叫做回调函数", isContentOpen: false },
             { name: "箭头函数的理解", content: "箭头函数也被称为 lambda函数，相对于传统的函数声明和函数表达式，箭头函数更加简洁，没有自己的this对象，this指向在定义时确定，不是在运行时确定，无法使用call apply  bind方法来改变this指向，箭头函数的return可以省略默认返回最后一个表达式", isContentOpen: false },
-            { name: "深浅拷贝", content: "前提为拷贝类型为引用类型的情况下：<br>浅拷贝是拷贝一层，属性为对象时，浅拷贝是复制，两个对象指向同一个地址深拷贝是递归拷贝深层次，属性为对象时，<br>深拷贝是新开栈，两个对象指向不同的地址<br>常见的深拷贝方式有：JSON.stringify() 循环递归", isContentOpen: false },
+            { name: "深浅拷贝", content: "前提为拷贝类型为引用类型的情况下：<br>浅拷贝是拷贝一层，属性为对象时，浅拷贝是复制，两个对象指向同一个地址深拷贝是递归拷贝深层次，属性为对象时，<br>深拷贝是新开栈，两个对象指向不同的地址<br>常见的深拷贝方式有：使用 JSON 序列化：JSON.parse(JSON.stringify(obj)) 循环,递归", isContentOpen: false },
             { name: "px rpx rem em vh vw 的区别是什么？", content: "px 是绝对单位长度，其他的是相对单位长度<br>rpx 微信小程序规定屏幕的宽度为750rpx  如手机屏幕宽度为375px 即1rpx=0.5px<br>rem 参照根元素hmlt 的font-sizi  如设置10px  那么1rem=10px<br>em  参照父元素的font-sizi  如父元素的font-sizi为5em 根元素html设置的为font-sizi=10px 那么子元素的1em=50px<br>vh vw 即屏幕分成100份  Viewport 视口pc端，Viewport指的是浏览器的可视区域移动端，涉及3个视口：Layout viewport（布局视口）、Visual viewport（视觉视口）、Ideal viewport（理想视口）。Viewport指的是其中的Layout Viewport。根据CSS3规范，视口单位包括以下4个vw: 1 vw等于视口宽度的1%vh: 1 vh等于视口高度的1%vmin: 选取vw和vh中最小的那个vmax: 选取vw和vh中最大的那个", isContentOpen: false },
             { name: "状态码", content: "消息类（1开头） 成各类（2开头）重定向（3开头）请求错误（4开头）服务器错误（5开头）", isContentOpen: false },
             { name: "后台系统的权限管理怎么设置", content: "前端方案：把所有路由信息在前端配置，通过路由守卫要求用户登录，用户登录后根据角色过滤出路由表，配置一个asyncRoutes数组，需要认证的页面在其路由的meta中添加一个roles字段，等获取用户角色之后取两者的交集，若结果不为空则说明可以访问，剩下的路由就是该用户能访问的页面，通过router.addRoutes(accessRoutes)方式动态添加路由<br>后端方案：把所有页面路由信息存在数据库中，用户登录的时候根据角色查询得到能访问的所有页面路由信息返回给前端，前端再通过addRoutes动态添加路由信息<br>按钮权限：控制实现一个指令，v-permission，将按钮要求角色通过值传给v-permission指令，在指令的mouned钩子中可以判断当前用户校色和按钮是否存在交集，有则保留按钮，没有移除按钮", isContentOpen: false },
@@ -82,6 +90,8 @@ export const OriginalDataList = [
             { name: "一个网站打开到完全打开经过了哪些", content: "1. 用户输入URL<br>2.DNS解析<br>3. 建立 TCP 连接<br>4. 发送 HTTP 请求<br>5. 服务器响应 HTTP<br>6. 解析 HTML<br>7. 下载资源<br>8. 解析 CSS 和 JS<br>9. 构建渲染树<br>10. 布局和绘制<br>11. 执行 JavaScript<br>12. 图片、视频等资源加载<br>13. 页面交互和动画<br>14. 页面完全加载", isContentOpen: false },
             { name: "什么是indexDB", content: "IndexedDB是一种低级别的客户端存储技术，提供了浏览器中持久化存储大量结构化数据的能力。它是由浏览器内置的一个NoSQL 数据库，支持键值对的存储，并允许高效地查询、索引和事务操作。<br>特性:	localStorage	sessionStorage	IndexedDB<br>容量限制:	~5MB	~5MB	几乎无限制<br>数据类型:	字符串	字符串	结构化数据<br>读写操作:	简单同步	简单同步	复杂异步<br>数据过期:	永久	会话	永久<br>查询效率:	无索引，查询慢。	无索引，查询慢。	支持索引，高效查询。", isContentOpen: false },
             { name: "前端如何处理跨域", content: "跨域主要是由 同源策略 引起的，涉及协议、域名和端口号的不同.<br>1. 使用JSONP,只支持GET请求<br>2.使用CORS,设置服务器响应头Access-Control-Allow-Origin,需要后端支持并正确配置.<br>3.webpack.config.js或者vite.config.js配置proxy<br>4.使用Nginx反向代理,Nginx配置server<br>5.WebSocket", isContentOpen: false },
+            { name: "哪些情况会导致内存泄漏", content: "1.意外的全局变量：由于使用未声明的变量，而意外的创建了一个全局变量，而使这个变量一直留在内存中无法被回收。<br>2.被遗忘的计时器或回调函数：设置了 setInterval 定时器，而忘记取消它，如果循环函数有对外部变量的引用的话，那么这个变量会被一直留在内存中，而无法被回收。<br>3.脱离 DOM 的引用：获取一个 DOM 元素的引用，而后面这个元素被删除，由于一直保留了对这个元素的引用，所以它也无法被回收。<br>4.闭包：不合理的使用闭包，从而导致某些变量一直被留在内存当中。", isContentOpen: false },
+            { name: "什么是堆，什么是栈", content: "特性	  栈 (Stack)	  堆 (Heap)   <br>1.分配方式:自动分配和释放,手动分配和释放（动态分配）。<br>2.存储内容:局部变量、函数调用信息,对象、数组等复杂数据结构。<br>3.速度:快,慢。<br>4.内存管理:由系统管理，自动释放,程序员管理，依赖垃圾回收机制。<br>5.内存大小:小，受栈空间限制,大，可动态分配。<br>6.存储结构:后进先出 (LIFO),无特定结构，内存地址随机分布。<br>7.适用场景:临时变量、函数调用,动态对象、大数据结构。<br>8.栈: 快速高效，适用于短期存储和简单变量。<br>9.堆: 灵活多样，适用于复杂数据结构和长期存储。", isContentOpen: false },
         ],
     },
 ] 
