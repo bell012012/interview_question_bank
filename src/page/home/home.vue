@@ -69,8 +69,6 @@ watch(
 );
 
 const toggleTitle = (index: number) => {
-    console.log('22');
-    
     state.dataList.forEach((item, idx) => {
         if (idx !== index) {
             item.isTitleOpen = false;
@@ -80,8 +78,6 @@ const toggleTitle = (index: number) => {
 };
 
 const toggleContent = (index: number, textIndex: number) => {
-    console.log('111');
-    
     const item = state.dataList[index];
     item.text.forEach((textItem: TextItem, idx: number) => {
         if (idx !== textIndex) {
@@ -126,30 +122,30 @@ const clearInput = () => {
 <style lang="scss" scoped>
 /* 控制滚动条的宽度 */
 ::-webkit-scrollbar {
-    width: 6px; /* 水平滚动条宽度 */
-    height: 6px; /* 垂直滚动条宽度 */
+    width: 6px;
+    height: 6px;
 }
 
 /* 控制滚动条轨道的颜色 */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* 滚动条轨道的背景色 */
+    background: #f1f1f1;
     border-radius: 6px;
 }
 
 /* 控制滚动条滑块的颜色 */
 ::-webkit-scrollbar-thumb {
-    background: #888; /* 滚动条滑块的颜色 */
+    background: #888;
     border-radius: 6px;
 }
 
 /* 滚动条滑块的悬停颜色 */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* 滚动条滑块悬停时的颜色 */
+    background: #555;
 }
 
 
 .wrapper {
-    padding: 20px;
+    padding: 10px;
     width: 100%;
     height: 100vh;
 
@@ -204,6 +200,7 @@ const clearInput = () => {
             overflow-y: auto;
             border-radius: 0 0 0px 10px;
             background-color: #252f4b;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .rightBox {
@@ -214,6 +211,13 @@ const clearInput = () => {
             background-color: #314551;
             border-radius: 0 0 10px 0px;
             font-size: 20px;
+
+            >p {
+                white-space: normal;
+                word-wrap: break-word;
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
         }
 
         .title {
@@ -233,10 +237,16 @@ const clearInput = () => {
         .textItem {
             margin-bottom: 5px;
             cursor: pointer;
+
             >p {
                 border: 1px solid #fff;
                 border-radius: 20px;
                 padding: 5px 10px;
+                font-size: 14px;
+                white-space: normal;
+                word-wrap: break-word;
+                word-break: break-word;
+                overflow-wrap: break-word;
             }
         }
     }

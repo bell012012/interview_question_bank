@@ -56,11 +56,11 @@ button {
 }
 
 button:hover {
-  background-color: #369d72; /* 比主色稍深 */
+  /* background-color: #369d72; 比主色稍深 */
 }
 
 button:disabled {
-  background-color: var(--border-color);
+  /* background-color: var(--border-color); */
   cursor: not-allowed;
 }
 
@@ -69,7 +69,7 @@ button:disabled {
 ----------------------------- */
 /* 边框盒 */
 .border-box {
-  border: 1px solid var(--border-color);
+  /* border: 1px solid var(--border-color); */
   border-radius: 4px;
   padding: var(--padding-base);
 }
