@@ -20,7 +20,7 @@ export const OriginalDataList = [
         ],
     },
     {
-        title: "JS",
+        title: "JS和TS",
         isTitleOpen: false,
         text: [
             { name: "Es6有哪些新特性", content: "1. let和const<br>2. 解构<br>3. 展开运算符<br>4. 模板字符串<br>5. 箭头函数<br>6. Class类对象的简化赋值", isContentOpen: false },
@@ -32,6 +32,12 @@ export const OriginalDataList = [
             { name: "forEach和map的区别", content: "forEach()方法会针对每一个元素执行提供的函数，对数据的操作会改变原数组，该方法没有返回值；<br>map()方法不会改变原数组的值，返回一个新数组，新数组中的值为原数组调用函数处理之后的值；", isContentOpen: false },
             { name: "Promise详解", content: "1.Promise有以下三种状态:pending（进行中）,fulfilled（已完成/已成功）,rejected（已失败）<br>2.Promise方法:<br>2.1:then()用于处理resolve的结果<br>2.2:catch()用于处理 reject 的结果。<br>2.3:finally()无论 resolve 还是 reject 都会执行。", isContentOpen: false },
             { name: "同步与异步的分类和宏任务与微任务", content: "1.异步任务有：setTimeout，setInterval，Promise，Async/Await是同步/异步结合。<br>2.宏任务（Macro Task）包括：setTimeout、setInterval、setImmediate、I/O 等。宏任务会被添加到主任务队列。<br>3.微任务（Micro Task）包括：nextTick、Promise.then、MutationObserver、queueMicrotask。微任务的优先级高于宏任务，主线程每次执行一个宏任务后，会先清空微任务队列。", isContentOpen: false },
+            { name: "什么是TypeScript", content: "TypeScript是一种由微软开发的开源编程语言，它是JavaScript的超集。TypeScript通过添加静态类型、类、接口和模块等功能，使得在大型应用程序中更容易进行维护和扩展。它可以被编译为纯JavaScript，从而能够在任何支持JavaScript的地方运行。使用TypeScript可以帮助开发人员在编码过程中避免一些常见的错误，并提供更好的代码编辑功能和工具支持。", isContentOpen: false },
+            { name: "什么是接口（interface）", content: "接口是用于描述对象的形状的结构化类型。它定义了对象应该包含哪些属性和方法。在TypeScript中，接口可以用来约束对象的结构，以提高代码的可读性和维护性。", isContentOpen: false },
+            { name: "什么是枚举（enum）", content: "枚举是一种对数字值集合进行命名的方式。它们可以增加代码的可读性，并提供一种便捷的方式来使用一组有意义的常量。", isContentOpen: false },
+            { name: "什么是类型断言（Type Assertion）", content: "类型断言允许程序员手动指定一个值的类型。这在需要明确告诉编译器某个值的类型时非常有用。", isContentOpen: false },
+            { name: "TypeScript数据类型", content: "1.基本类型：<br>1.1:number: 表示数字，包括整数和浮点数。<br>1.2:string: 表示文本字符串。<br>1.3:boolean: 表示布尔值，即true或false。<br>1.4:null、undefined: 分别表示null和undefined。<br>1.5:symbol: 表示唯一的、不可变的值。<br>2.复合类型：<br>2.1:array: 表示数组，可以使用number[]或Array<number>来声明其中元素的类型。<br>2.2:tuple: 表示元组，用于表示固定数量和类型的数组。<br>2.3:enum: 表示枚举类型，用于定义具名常量集合。<br>3.对象类型：<br>3.1:object: 表示非原始类型，即除number、string、boolean、symbol、null或undefined之外的类型。<br>3.2:interface: 用于描述对象的结构，并且可以重复使用。<br>4.函数类型：<br>4.1:function: 表示函数类型。<br>4.2:void: 表示函数没有返回值。<br>4.3:any: 表示任意类型。<br>5.高级类型：<br>5.1:union types: 表示一个值可以是几种类型之一。<br>5.2:intersection types: 表示一个值同时拥有多种类型的特性。", isContentOpen: false },
+            { name: "TypeScript中的可选属性、只读属性和类型断言", content: "1.可选属性:使用 ? 来标记一个属性可以存在，也可以不存在。<br>2.只读属性:使用 readonly 关键字来标记一个属性是只读的。<br>3.类型断言:允许将一个实体强制指定为特定的类型，使用value as Type。", isContentOpen: false },
         ],
     },
     {
@@ -59,10 +65,21 @@ export const OriginalDataList = [
         title: "REACT",
         isTitleOpen: false,
         text: [
-            
+            { name: "为什么useState返回的是数组而不是对象？", content: "因为解构赋值的原因：<br>返回数组，可以对数组中的变量命名，代码看起来也比较干净。<br>返回对象，那就必须和返回的值同名，不能重复使用了。", isContentOpen: false }, 
+            { name: "React懒加载的实现原理？", content: "React 16.6 之后，React 提供了 React.lazy 方法来支持组件的懒加载。配合 webpack 的 code-splitting 特性，可以实现按需加载。<br>React.lazy 需要配合 Suspense 组件一起使用，在 Suspense 组件中渲染 React.lazy 异步加载的组件。如果单独使用 React.lazy，React 会给出错误提示。", isContentOpen: false }, 
+            { name: "Suspense组件", content: "Suspense 内部主要通过捕获组件的状态去判断如何加载，React.lazy 创建的动态加载组件具有 Pending、Resolved、Rejected 三种状态，当这个组件的状态为 Pending 时显示的是 Suspense 中 fallback 的内容，只有状态变为 resolve 后才显示组件。", isContentOpen: false }, 
+            { name: "React和Vue对比", content: "1.组件化方式不同:<br>1.1:React组件包含状态和行为，所有组件共享一个状态树<br>1.2:Vue 每个组件都有自己的状态和行为，并且可以很容易将数据和行为绑定在一起<br>2.数据驱动方式不同:<br>2.1:React 单项数据流<br>2.2:Vue 双向数据绑定<br>3.模板语法不同:<br>3.1:React 模板语法是 JSX，all in js<br>3.2Vue 模板语法是 Template、js、css，支持指令<br>4.生命周期不同:<br>4.1:React 生命周期：初始化、更新、卸载<br>4.2Vue 生命周期：创建、挂载、更新、销毁<br>5.状态管理方式不同:<br>5.1:React 状态管理：Redux、Mobx、zustand<br>5.2:Vue 状态管理：Vuex、Pinia<br>6.性能优化方式不同:<br>6.1:React 性能优化：React.memo、shouldComponentUpdate<br>6.2:Vue 性能优化：keep-alive、v-if", isContentOpen: false }, 
+            { name: "React组件通信", content: "1.如果是类组件，可以在子组件类中定义一个方法，并将其挂载到实例上<br>2.如果是类组件，可以使用 createRef 创建一个 ref 对象，并将其传递给子组件的 ref prop<br>3.如果是函数式组件，可以使用 useImperativeHandle Hook 将指定的方法暴露给父组件<br>4.如果是函数式组件，可以使用 useRef 创建一个 ref 对象，并将其传递给子组件的 ref prop", isContentOpen: false }, 
+            { name: "React中，Element、Component、Node、Instance是四个重要的概念。", content: "1.Element：Element 是 React 应用中最基本的构建块，它是一个普通的 JavaScript 对象，用来描述 UI 的一部分。Element 可以是原生的 DOM 元素，也可以是自定义的组件。它的作用是用来向 React 描述开发者想在页面上 render 什么内容。Element 是不可变的，一旦创建就不能被修改<br>2.Component：Component 是 React 中的一个概念，它是由 Element 构成的，可以是函数组件或者类组件。Component 可以接收输入的数据（props），并返回一个描述 UI 的 Element。Component 可以被复用，可以在应用中多次使用。分为 Class Component 以及 Function Component。<br>3.Node：Node 是指 React 应用中的一个虚拟节点，它是 Element 的实例。Node 包含了 Element 的所有信息，包括类型、属性、子节点等。Node 是 React 内部用来描述 UI 的一种数据结构，它可以被渲染成真实的 DOM 元素。<br>4.Instance：Instance 是指 React 应用中的一个组件实例，它是 Component 的实例。每个 Component 在应用中都会有一个对应的 Instance，它包含了 Component 的所有状态和方法。Instance 可以被用来操作组件的状态，以及处理用户的交互事件等。", isContentOpen: false }, 
+            { name: "Redux", content: "1. Store（存储）:提供三个主要方法：getState()：获取当前状态。dispatch(action)：分发动作，触发状态更新。subscribe(listener)：订阅状态变化事件。<br>2.Action（动作）:是一个描述状态变化的对象。分发任务<br>3.Reducer（状态处理器）:是一个纯函数，接收当前状态和动作，返回新的状态。<br>4.Dispatch（分发）:用于触发 reducer，让状态更新。<br>5.Middleware（中间件）:用于扩展 Redux 的功能，比如处理异步操作", isContentOpen: false }, 
+            { name: "calss类组件和函数式组件", content: "1.类组件（Class Components）:<br>1.1:使用 ES6 的 class 语法创建。<br>1.2:通过继承 React.Component 来定义组件。<br>1.3:可以使用生命周期方法（如 componentDidMount、shouldComponentUpdate）。<br>1.4:通过 this.state 和 this.setState 管理状态。<br>1.5:需要使用 this 关键字来访问属性和方法。<br>2.函数式组件（Function Components）:<br>2.1:使用普通的 JavaScript 函数定义组件。<br>2.2:无需继承 React.Component。<br>2.3:借助 Hooks（如 useState、useEffect）来管理状态和副作用。<br>2.4:更简洁，没有 this 的困扰。<br>2.5:从 React 16.8 开始支持状态和生命周期管理。", isContentOpen: false }, 
+            { name: "react的生命周期", content: "React的生命周期分为三个阶段：挂载阶段（Mounting）、更新阶段（Updating） 和 卸载阶段（Unmounting）<br>1.挂载阶段（Mounting）:<br>constructor初始化组件状态（state）和绑定事件-><br>static getDerivedStateFromProps(props, state)用于根据父组件的 props 派生 state。-><br>render必须实现的方法，用于描述组件的 UI-><br>componentDidMount组件挂载后调用，仅调用一次<br>2.更新阶段（Updating）当组件的 props 或 state 发生变化时触发调用:<br>static getDerivedStateFromProps(props, state)同挂载阶段，用于根据新的 props 更新 state。-><br>shouldComponentUpdate(nextProps, nextState)决定组件是否需要重新渲染。-><br>render同挂载阶段，用于重新渲染组件。-><br>getSnapshotBeforeUpdate(prevProps, prevState)通常用于获取更新前的 DOM 状态-><br>componentDidUpdate(prevProps, prevState, snapshot)适合执行依赖 DOM 的副作用操作<br>3.卸载阶段（Unmounting）:<br>componentWillUnmount取消订阅、清除定时器或移除事件监听器", isContentOpen: false }, 
+            { name: "React-router几种模式，以及实现原理？", content: "1.主要分成了两种模式：<br>1.1:hash 模式：在url后面加上#<br>1.2:history 模式：允许操作浏览器的曾经在标签页或者框架里访问的会话历史记录<br>2.hash原理:<br>2.1:hash 值改变，触发全局 window 对象上的 hashchange 事件。所以 hash 模式路由就是利用 hashchange 事件监听 URL 的变化，从而进行 DOM 操作来模拟页面跳转通过window.addEventListener('hashChange',callback)监听hash值的变化，并传递给其嵌套的组件", isContentOpen: false }, 
+            { name: "Mobx和Redux对比", content: "redux将数据保存在单一的store中，<br>mobx将数据保存在分散的多个store中<br>redux使用plain object保存数据，需要手动处理变化后的操作;<br>mobx适用observable保存数据，数据变化后自动处理响应的操作<br>redux使用不可变状态，这意味着状态是只读的，不能直接去修改它，而是应该返回一个新的状态，同时使用纯函数;<br>mobx中的状态是可变的，可以直接对其进行修改<br>mobx相对来说比较简单，在其中有很多的抽象，mobx更多的使用面向对象的编程思维;<br>redux会比较复杂，因为其中的函数式编程思想掌握起来不是那么容易，同时需要借助一系列的中间件来处理异步和副作用<br>mobx中有更多的抽象和封装，调试会比较困难，同时结果也难以预测;<br>而redux提供能够进行时间回溯的开发工具，同时其纯函数以及更少的抽象，让调试变得更加的容易", isContentOpen: false },  
+            { name: "react是单向数据流，是如何劫持数据的", content: "1.setState：在类组件中，setState 方法是用来更新组件状态的。React 通过劫持 setState 来确保状态更新是异步的，并且触发视图的更新。React 会将组件的状态更新合并并批量处理，从而减少不必要的重新渲染。<br>2.useState：在函数组件中，useState 是一个 Hook，用来声明状态变量。当状态变量更新时，React 会重新渲染组件。React 会自动更新组件的状态并重新渲染相应的 UI。<br>总结React的单向数据流通过以下方式来管理和“劫持”数据：<br>状态更新驱动视图：组件的状态通过 setState 或 useState 更新，React 会自动重新渲染 UI。<br>数据流是单向的：数据从父组件流向子组件，子组件无法直接修改父组件的状态。<br>React 内部通过机制优化更新：如异步更新、批量处理和虚拟 DOM，使得状态更新更高效。<br>通过 Proxy 和 Object.defineProperty：React 内部可能使用这些技术来优化性能和确保数据变化时 UI 正确更新。", isContentOpen: false },  
         ],
     },
-    {
+    {   
         title: "其他",
         isTitleOpen: false,
         text: [
