@@ -17,6 +17,7 @@ export const OriginalDataList = [
             { name: "css盒子模型包含哪些", content: "1. 内容content2. 内边距padding3. 边框border4. 外边距margin", isContentOpen: false },
             { name: "CSS3有哪些新特性", content: "1. 选择器  如伪选择器和伪元素<br>2. 背景和边框<br>3. 文本效果<br>4. 2D/3D转换<br>5. 动画/过渡<br>6. 多列布局（flex）<br>7. 用户界面（@media）", isContentOpen: false },
             { name: "display:none与visibility:hidden 的区别是什么？", content: "display : none 隐藏对应的元素，不占有位置，会引起回流+重绘visibility:hideen 隐藏对应的元素，还占有原先的位置，只会引起重绘overflow:hidden     溢出隐藏 可以解决margin塌陷的问题和清除浮动功能", isContentOpen: false },
+            { name: "css如何实现响应式布局", content: "1.媒体查询 (Media Queries)@media (max-width: 768px) <br>2.弹性盒模型 (Flexbox)<br>3.网格布局 (CSS Grid)<br>4.百分比布局,使用百分比单位设置宽度、高度等，可以实现元素的自适应布局。<br>5. 响应式字体和图片,通过 vw、vh 或 clamp() 动态调整字体大小。<br>6.使用 CSS 框架: Bootstrap 和 Tailwind CSS <br>7.使用 vw（视口宽度单位）和 vh（视口高度单位）实现元素的动态调整<br>8. 容器查询:@container (min-width: 600px)", isContentOpen: false },
         ],
     },
     {
@@ -38,6 +39,7 @@ export const OriginalDataList = [
             { name: "什么是类型断言（Type Assertion）", content: "类型断言允许程序员手动指定一个值的类型。这在需要明确告诉编译器某个值的类型时非常有用。", isContentOpen: false },
             { name: "TypeScript数据类型", content: "1.基本类型：<br>1.1:number: 表示数字，包括整数和浮点数。<br>1.2:string: 表示文本字符串。<br>1.3:boolean: 表示布尔值，即true或false。<br>1.4:null、undefined: 分别表示null和undefined。<br>1.5:symbol: 表示唯一的、不可变的值。<br>2.复合类型：<br>2.1:array: 表示数组，可以使用number[]或Array<number>来声明其中元素的类型。<br>2.2:tuple: 表示元组，用于表示固定数量和类型的数组。<br>2.3:enum: 表示枚举类型，用于定义具名常量集合。<br>3.对象类型：<br>3.1:object: 表示非原始类型，即除number、string、boolean、symbol、null或undefined之外的类型。<br>3.2:interface: 用于描述对象的结构，并且可以重复使用。<br>4.函数类型：<br>4.1:function: 表示函数类型。<br>4.2:void: 表示函数没有返回值。<br>4.3:any: 表示任意类型。<br>5.高级类型：<br>5.1:union types: 表示一个值可以是几种类型之一。<br>5.2:intersection types: 表示一个值同时拥有多种类型的特性。", isContentOpen: false },
             { name: "TypeScript中的可选属性、只读属性和类型断言", content: "1.可选属性:使用 ? 来标记一个属性可以存在，也可以不存在。<br>2.只读属性:使用 readonly 关键字来标记一个属性是只读的。<br>3.类型断言:允许将一个实体强制指定为特定的类型，使用value as Type。", isContentOpen: false },
+            { name: "处理冒泡事件", content: "1.事件冒泡：事件从目标元素开始，逐级向父元素传播。<br>2.阻止冒泡：使用 event.stopPropagation()和@click.stop,@click.stop.prevent,v-on:click.stop可以阻止事件继续冒泡。<br>3.事件捕获：事件从根元素开始传播，直到目标元素，设置监听器时使用 true 参数。<br>4.事件代理：通过父元素代理子元素的事件，适用于动态生成的元素。并且可以通过 event.target 获取到事件的目标元素", isContentOpen: false },
         ],
     },
     {
@@ -59,6 +61,8 @@ export const OriginalDataList = [
             { name: "$nextTick()的方法", content: "$nextTick()用于在下次DOM更新循环结束之后执行回调函数。它通常用于在修改数据后，等待 DOM 更新完成后执行一些操作。<br>工作原理：在 Vue 中，DOM 更新是异步的。修改数据后，Vue 会将更新放入队列，并在下一个事件循环中更新 DOM。$nextTick() 会将回调推入队列，确保它在 DOM 更新完成后执行。", isContentOpen: false }, 
             { name: "vue2和vue3的区别", content: "1.响应式系：vue2是Object.defineProperty，vue3是Proxy<br>2.API:vue2是Options API  vue3是Composition API<br>3.性能优化:vue2较慢,vue3更快,体积更小<br>4.TypeScript支持:vue2较弱，通过其他工具，vue3原生支持<br>5.全局API:vue2挂载在Vue上,vue3挂载在应用实例上<br>6.多根节点支持:vue2不支持template必须有一个div,vue3支持Fragment<br>7.自定义渲染器:vue2不支持,vue3支持多个v-model", isContentOpen: false }, 
             { name: "ref和reactive的区别", content: "1.数据类型:ref:基本类型、复杂类型,reactive:对象类型、数组类型<br>2.访问方式:ref:.value 访问基本类型,reactive:直接访问属性<br>3.响应式实现:ref:Proxy包装.value管理,reactive:Proxy深度代理整个对象<br>4.嵌套处理:ref:需要手动处理嵌套响应式,reactive:自动深度响应式<br>5.使用场景:ref:单值响应式（如表单输入值）内存开销小,reactive:复杂对象的状态管理,内存占用相对较高", isContentOpen: false }, 
+            { name: "vuex", content: "1.State（状态）:用于存储全局共享的数据。<br>2.Getter（计算属性）:类似于组件中的计算属性，用于从 state 中派生出一些状态。<br>3.Mutation（变更）:修改 state 的唯一方法，必须是同步的。<br>4.Action（动作）:提交 mutation，可以包含异步操作。<br>5.Module（模块化）:将 state、mutation、action 等划分为模块，便于管理大型项目。", isContentOpen: false }, 
+            { name: "Pinia", content: "1.State（状态）:用于存储全局数据。<br>2.Getters（计算属性）:派生出基于 state 的状态。<br>3.Actions（方法）:用于修改 state，可以包含异步操作。<br>Pinia 的特点:<br>1.响应式状态：Pinia 基于 Vue 3 的响应式系统，所有的状态都是响应式的。<br>2.轻量级：比 Vuex 更加轻量，API 更简洁。<br>3.支持 TypeScript：原生支持 TypeScript 类型推导，开发体验更好。<br>4.模块化：支持多个 store，并且可以按需加载，方便管理大型项目。<br>5.持久化插件：Pinia 提供了插件机制，可以轻松地实现状态持久化等功能。<br>6.与 Vue Router 集成：可以方便地与 Vue Router 进行集成，管理路由状态。<br>持久化插件：pinia-plugin-persistedstate<br>persist: <br>enabled: true,        // 启用持久<br>storage: sessionStorage,  // 使用 sessionStorage,", isContentOpen: false }, 
         ],
     },
     {   
@@ -109,6 +113,7 @@ export const OriginalDataList = [
             { name: "前端如何处理跨域", content: "跨域主要是由 同源策略 引起的，涉及协议、域名和端口号的不同.<br>1. 使用JSONP,只支持GET请求<br>2.使用CORS,设置服务器响应头Access-Control-Allow-Origin,需要后端支持并正确配置.<br>3.webpack.config.js或者vite.config.js配置proxy<br>4.使用Nginx反向代理,Nginx配置server<br>5.WebSocket", isContentOpen: false },
             { name: "哪些情况会导致内存泄漏", content: "1.意外的全局变量：由于使用未声明的变量，而意外的创建了一个全局变量，而使这个变量一直留在内存中无法被回收。<br>2.被遗忘的计时器或回调函数：设置了 setInterval 定时器，而忘记取消它，如果循环函数有对外部变量的引用的话，那么这个变量会被一直留在内存中，而无法被回收。<br>3.脱离 DOM 的引用：获取一个 DOM 元素的引用，而后面这个元素被删除，由于一直保留了对这个元素的引用，所以它也无法被回收。<br>4.闭包：不合理的使用闭包，从而导致某些变量一直被留在内存当中。", isContentOpen: false },
             { name: "什么是堆，什么是栈", content: "特性	  栈 (Stack)	  堆 (Heap)   <br>1.分配方式:自动分配和释放,手动分配和释放（动态分配）。<br>2.存储内容:局部变量、函数调用信息,对象、数组等复杂数据结构。<br>3.速度:快,慢。<br>4.内存管理:由系统管理，自动释放,程序员管理，依赖垃圾回收机制。<br>5.内存大小:小，受栈空间限制,大，可动态分配。<br>6.存储结构:后进先出 (LIFO),无特定结构，内存地址随机分布。<br>7.适用场景:临时变量、函数调用,动态对象、大数据结构。<br>8.栈: 快速高效，适用于短期存储和简单变量。<br>9.堆: 灵活多样，适用于复杂数据结构和长期存储。", isContentOpen: false },
+            { name: "Webpack 和 Vite", content: "1. 构建方式:<br>Webpack:打包整个项目，生成捆绑包<br>vite:使用原生 ESM，按需编译<br>2.启动速度:<br>Webpack:启动较慢，特别是在大型项目中<br>Vite:启动速度非常快，几秒钟内即可启动<br>3.热更新（HMR）:<br>Webpack:重新打包更新全部的模块<br>Vite:只打包更新修改的模块，不需要刷新页面<br>4.生产构建:<br>Webpack:强大的生产模式优化（Tree Shaking 等）<br>Vite:使用 Rollup 打包，优化结果较好<br>5.配置和插件:<br>Webpack:配置较复杂，插件生态丰富<br>vite:配置简洁，插件支持现代框架<br>6.兼容性:<br>Webpack:兼容性较好，支持旧版浏览器<br>vite:主要支持现代浏览器", isContentOpen: false },
         ],
     },
 ] 
