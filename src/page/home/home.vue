@@ -225,7 +225,7 @@ const clearInput = () => {
                 white-space: normal;
                 word-wrap: break-word;
                 word-break: break-word;
-                overflow-wrap: break-word;
+                overflow-wrap: break-word;  
             }
         }
 
