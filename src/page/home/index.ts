@@ -1,4 +1,5 @@
 import { other29,other30,other31 } from './contents/other'
+import { vue1,vue11,vue10,vue8 } from './contents/vue'
 export const OriginalDataList = [
     {
         title: "HTML",
@@ -49,17 +50,17 @@ export const OriginalDataList = [
         title: "VUE",
         isTitleOpen: false,
         text: [
-            { name: "Vue中的v-model双向数据绑定的原理", content: "数据层（Model） 视图层（View） 业务逻辑层（ViewModel） <br>vue2中通过v-bind绑定属性，当属性数据发生变化时，表单内容跟着变化，使用v-on监听input事件，当页面数据发生变化是，通过event事件处理来进行双向数据绑定Vue2数据双向绑定原理的实现 Vue2采用数据劫持并结合发布者-订阅者模式的方式，通过ES6的object.defineProperty()方法去劫持各个属性的setter/getter方法，在数据发生变化的时候，发布信息给订阅者，触发相应的监听回调。<br>在 vue3 中modelValue属性和监听update:modelValue事件，事件为 $emit('update:modelValue')proxy代理，get和set", isContentOpen: false }, 
+            { name: "Vue中的v-model双向数据绑定的原理", content: vue1, isContentOpen: false }, 
             { name: "v-if和v-show的区别", content: "v-if是频繁的向DOM树内添加或者删除DOM元素；<br>v-show是通过设置DOM元素的display样式属性控制显隐；", isContentOpen: false }, 
             { name: "v-for key的尽量不要用index", content: "使用id的唯一性能确保虚拟DOM的更新操作尽可能高效，当数据发生变化时，如果元素被添加、删除或移动，原来的索引值会发生变化，导致key与实际内容不匹配，可能会引发渲染错误或性能下降。列表重新排序可能引发错误：使用索引作为key可能会误导Vue认为只是元素位置的简单更新，而不是内容的真正变化。", isContentOpen: false }, 
             { name: "v-for和v-if为什么不可以一起使用", content: "`v-for`和`v-if`确实可以一起使用，`v-for`的优先级高于`v-if`，这意味着`v-for`会先执行，生成元素，然后`v-if`根据条件对这些元素进行过滤。如果`v-for`循环的元素全部不满足`v-if`的条件，那么页面上将不会有任何内容被渲染出来。可以将`v-if`放在父级元素上", isContentOpen: false }, 
             { name: "Vue中的路由", content: "1. 声明式路由,router-link 声明式定义跳转.<br>2. 函数式路由,this.$router 方法实现动态路由跳转,<br>常用方法：<br>this.$router.push：跳转到指定路由。<br>this.$router.replace：替换当前路由（不保留历史记录）。<br>this.$router.back：返回上一页。<br>this.$router.forward：前进一页。<br>this.$router.go(n)：跳转到历史记录的第 n 个页面。<br>$router 和 $route 的区别,$router,用于控制路由跳转。$route,包含当前路由的信息，如 path、params、query 等。<br>Query传参?id=123，刷新不丢失，定义路由不需要声明<br>Params,/home/123,刷新丢失，定义路由需要声明", isContentOpen: false }, 
             { name: "vue的生命周期有哪些", content: "beforeCreate -> 使用 setup()<br>created -> 使用 setup()<br>beforeMount -> onBeforeMount<br>mounted -> onMounted<br>beforeUpdate -> onBeforeUpdate<br>updated -> onUpdated<br>beforeDestroy -> onBeforeUnmount<br>destroyed -> onUnmounted<br>errorCaptured -> onErrorCaptured<br>keep-alive 包裹时，那该组件就多了2个生命周期，activated 和deactivated", isContentOpen: false }, 
             { name: "keep-alive", content: "组件缓存： keep-alive 会缓存被包裹的组件，在组件被切换时不会销毁，而是保留其状态。当再次激活时，组件会恢复之前的状态。<br>activated 和 deactivated 生命周期钩子：<br>activated：当组件被激活时触发，相当于组件重新显示或进入视图时。<br>deactivated：当组件被停用时触发，相当于组件离开视图时，但并未销毁。组件的状态被保留，便于下次激活时恢复。<br>keep-alive 主要适用于以下场景：切换多个视图组件时，避免重新渲染和重新加载数据。提高性能，特别是当组件中有复杂的初始化操作时。用于在切换组件时保持组件的状态，如表单的输入数据、滚动位置等。注意事项keep-alive 会缓存组件的状态，但如果需要手动控制缓存的组件，<br>可以使用 include 和 exclude 属性来指定哪些组件需要被缓存，哪些不需要。被 keep-alive 缓存的组件不会被销毁，因此要注意它们的资源和内存使用。", isContentOpen: false }, 
-            { name: "父组件和子组件之间的生命周期", content: "执行顺序如下：<br>先走父组件的：beforeCreate ，created ，beforeMount <br>再走子组件的：beforeCreate ，created ，beforeMount，mounted <br>多个子组件也是，先走完上面四个然后再走父组件的：mounted <br>beforeCreate ：拿不到dom节点和data数据<br>created ：拿不到dom节点，可以拿到data数据<br>先走同步，再走异步，setTimeout和setInterval和nextTick 都是异步", isContentOpen: false }, 
+            { name: "父组件和子组件之间的生命周期", content: vue8, isContentOpen: false }, 
             { name: "组件通讯方式有哪些", content: "父子通讯：props和$emit    兄弟通讯：Event Bus和vuex  跨级通讯：Event Bus和vuex和provide/inject", isContentOpen: false }, 
-            { name: "父组件和子组件传参问题", content: "父组件可以props传参给子组件，也可以使用ref操作节点传参，子组件可以使用$emit传过去给父组件修改属性，不可以直接在子组件修改父组件的属性，因为子组件没法ref拿到父组件的节点。defineExpose：通过 Vue 3 的 defineExpose 来暴露子组件的方法给父组件。", isContentOpen: false }, 
-            { name: "computed和watch的区别", content: "1. computed：缓存特性：computed 是基于依赖的属性进行计算的，并且只有在相关依赖发生变化时才会重新计算。也就是说，如果计算的结果没有变化，computed 会返回缓存的值，避免不必要的重新计算，提高性能。用途：一般用于需要基于现有数据进行计算或格式化的场景。例如，计算一个值或根据其他值生成新数据。使用场景：当你需要计算一个值并且该值依赖于其他值的变化时，使用 computed 是更合适的。<br>2. watch：没有缓存：watch 监听某个数据或计算属性的变化，并在变化时执行指定的回调函数。它不会缓存值，每次数据变化时都会执行回调。用途：一般用于监听某些数据的变化，并在数据变化时执行一些异步操作或副作用（如发起请求、更新其他数据等）。它可以是同步的或异步的。使用场景：当你需要在数据变化时执行一些操作（如异步请求、数据保存等）时，使用 watch 更合适。<br>主要区别：缓存：computed 会缓存结果，只有当依赖的属性变化时才会重新计算；而 watch 不缓存每次执行的结果。用途：computed 更适合用于计算属性，进行同步计算。watch 更适合用于监听数据变化并执行副作用操作（如发起异步请求、执行复杂的操作等）。", isContentOpen: false }, 
+            { name: "父组件和子组件传参问题", content: vue10, isContentOpen: false }, 
+            { name: "computed和watch的区别", content: vue11, isContentOpen: false }, 
             { name: "vue3中 watch、watchEffect区别", content: "1、watch是惰性执行，也就是只有监听的值发生变化的时候才会执行，但是watchEffect不同，每次代码加载watchEffect都会执行（忽略watch第三个参数的配置，如果修改配置项也可以实现立即执行）<br>2、watch需要传递监听的对象，watchEffect不需要<br>3、watch只能监听响应式数据：ref定义的属性和reactive定义的对象，如果直接监听reactive定义对象中的属性是不允许的（会报警告），除非使用函数转换一下。其实就是官网上说的监听一个getter<br>4、watchEffect如果监听reactive定义的对象是不起作用的，只能监听对象中的属性。", isContentOpen: false }, 
             { name: "$nextTick()的方法", content: "$nextTick()用于在下次DOM更新循环结束之后执行回调函数。它通常用于在修改数据后，等待 DOM 更新完成后执行一些操作。<br>工作原理：在 Vue 中，DOM 更新是异步的。修改数据后，Vue 会将更新放入队列，并在下一个事件循环中更新 DOM。$nextTick() 会将回调推入队列，确保它在 DOM 更新完成后执行。", isContentOpen: false }, 
             { name: "vue2和vue3的区别", content: "1.响应式系：vue2是Object.defineProperty，vue3是Proxy<br>2.API:vue2是Options API  vue3是Composition API<br>3.性能优化:vue2较慢,vue3更快,体积更小<br>4.TypeScript支持:vue2较弱，通过其他工具，vue3原生支持<br>5.全局API:vue2挂载在Vue上,vue3挂载在应用实例上<br>6.多根节点支持:vue2不支持template必须有一个div,vue3支持Fragment<br>7.自定义渲染器:vue2不支持,vue3支持多个v-model", isContentOpen: false }, 
