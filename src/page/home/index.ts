@@ -1,5 +1,6 @@
 import { other29,other30,other31 } from './contents/other'
-import { vue1,vue11,vue10,vue8 } from './contents/vue'
+import { vue1,vue11,vue10,vue8,vue15 } from './contents/vue'
+import { ts19,ts20 } from './contents/ts'
 export const OriginalDataList = [
     {
         title: "HTML",
@@ -44,6 +45,8 @@ export const OriginalDataList = [
             { name: "处理冒泡事件", content: "1.事件冒泡：事件从目标元素开始，逐级向父元素传播。<br>2.阻止冒泡：使用 event.stopPropagation()和@click.stop,@click.stop.prevent,v-on:click.stop可以阻止事件继续冒泡。<br>3.事件捕获：事件从根元素开始传播，直到目标元素，设置监听器时使用 true 参数。<br>4.事件代理：通过父元素代理子元素的事件，适用于动态生成的元素。并且可以通过 event.target 获取到事件的目标元素", isContentOpen: false },
             { name: "type和interface有什么区别", content: "type:可以定义任意类型（基本类型、联合类型、交叉类型等）。<br>interface：定义对象的结构。<br>type:只能声明一次。<br>interface:可以多次声明。", isContentOpen: false },
             { name: "ES6中Set和Map是两种新引入的数据结构", content: "1.set：const mySet = new Set();<br>1.1:无重复值：Set 是一种集合数据结构，其中的值是唯一的，不能重复。<br>1.2:值的类型：可以存储任意类型的值，包括基本类型和引用类型。<br>1.3:有序性：Set 中的值是按照插入顺序存储的。<br>1.4:常用方法:add(value)：向集合添加一个值。<br>delete(value)：删除集合中的指定值<br>has(value)：检查集合中是否包含某个值。<br>clear()：清空集合。<br>size：返回集合中元素的数量。<br>2.Map:const myMap = new Map();<br>2.1:键值对存储：Map 是一种字典数据结构，存储的是键值对（key-value pairs）。<br>2.2:键的类型：键可以是任何类型，包括对象。<br>2.3:有序性：键值对按照插入顺序存储。<br>2.4:常用方法:set(key, value)：向字典添加或更新一个键值对。<br>get(key)：根据键获取对应的值。<br>has(key)：检查是否包含某个键。<br>delete(key)：删除指定的键值对。<br>clear()：清空字典。<br>size：返回字典中键值对的数量。<br>ES6 还提供了 WeakSet 和 WeakMap，它们是 Set 和 Map 的弱引用版本:<br>WeakSet 中只能存储对象类型的值，且是弱引用。<br>WeakMap 的键必须是对象，且键值对是弱引用，适用于临时存储和垃圾回收优化。", isContentOpen: false },
+            { name: "TS的类型", content: ts19, isContentOpen: false },
+            { name: "Namespace 命名空间", content: ts20, isContentOpen: false },
         ],
     },
     {
@@ -64,7 +67,7 @@ export const OriginalDataList = [
             { name: "vue3中 watch、watchEffect区别", content: "1、watch是惰性执行，也就是只有监听的值发生变化的时候才会执行，但是watchEffect不同，每次代码加载watchEffect都会执行（忽略watch第三个参数的配置，如果修改配置项也可以实现立即执行）<br>2、watch需要传递监听的对象，watchEffect不需要<br>3、watch只能监听响应式数据：ref定义的属性和reactive定义的对象，如果直接监听reactive定义对象中的属性是不允许的（会报警告），除非使用函数转换一下。其实就是官网上说的监听一个getter<br>4、watchEffect如果监听reactive定义的对象是不起作用的，只能监听对象中的属性。", isContentOpen: false }, 
             { name: "$nextTick()的方法", content: "$nextTick()用于在下次DOM更新循环结束之后执行回调函数。它通常用于在修改数据后，等待 DOM 更新完成后执行一些操作。<br>工作原理：在 Vue 中，DOM 更新是异步的。修改数据后，Vue 会将更新放入队列，并在下一个事件循环中更新 DOM。$nextTick() 会将回调推入队列，确保它在 DOM 更新完成后执行。", isContentOpen: false }, 
             { name: "vue2和vue3的区别", content: "1.响应式系：vue2是Object.defineProperty，vue3是Proxy<br>2.API:vue2是Options API  vue3是Composition API<br>3.性能优化:vue2较慢,vue3更快,体积更小<br>4.TypeScript支持:vue2较弱，通过其他工具，vue3原生支持<br>5.全局API:vue2挂载在Vue上,vue3挂载在应用实例上<br>6.多根节点支持:vue2不支持template必须有一个div,vue3支持Fragment<br>7.自定义渲染器:vue2不支持,vue3支持多个v-model", isContentOpen: false }, 
-            { name: "ref和reactive的区别", content: "1.数据类型:ref:基本类型、复杂类型,reactive:对象类型、数组类型<br>2.访问方式:ref:.value 访问基本类型,reactive:直接访问属性<br>3.响应式实现:ref:Proxy包装.value管理,reactive:Proxy深度代理整个对象<br>4.嵌套处理:ref:需要手动处理嵌套响应式,reactive:自动深度响应式<br>5.使用场景:ref:单值响应式（如表单输入值）内存开销小,reactive:复杂对象的状态管理,内存占用相对较高", isContentOpen: false }, 
+            { name: "ref和reactive的区别", content: vue15, isContentOpen: false }, 
             { name: "vuex", content: "1.State（状态）:用于存储全局共享的数据。<br>2.Getter（计算属性）:类似于组件中的计算属性，用于从 state 中派生出一些状态。<br>3.Mutation（变更）:修改 state 的唯一方法，必须是同步的。<br>4.Action（动作）:提交 mutation，可以包含异步操作。<br>5.Module（模块化）:将 state、mutation、action 等划分为模块，便于管理大型项目。", isContentOpen: false }, 
             { name: "Pinia", content: "1.State（状态）:用于存储全局数据。<br>2.Getters（计算属性）:派生出基于 state 的状态。<br>3.Actions（方法）:用于修改 state，可以包含异步操作。<br>Pinia 的特点:<br>1.响应式状态：Pinia 基于 Vue 3 的响应式系统，所有的状态都是响应式的。<br>2.轻量级：比 Vuex 更加轻量，API 更简洁。<br>3.支持 TypeScript：原生支持 TypeScript 类型推导，开发体验更好。<br>4.模块化：支持多个 store，并且可以按需加载，方便管理大型项目。<br>5.持久化插件：Pinia 提供了插件机制，可以轻松地实现状态持久化等功能。<br>6.与 Vue Router 集成：可以方便地与 Vue Router 进行集成，管理路由状态。<br>持久化插件：pinia-plugin-persistedstate<br>persist: <br>enabled: true,        // 启用持久<br>storage: sessionStorage,  // 使用 sessionStorage,", isContentOpen: false }, 
         ],

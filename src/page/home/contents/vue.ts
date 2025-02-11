@@ -43,3 +43,16 @@ export const vue11 = `
     <br>immediate：组件加载立即触发回调函数
     <br>deep：深度监听，发现数据内部的变化，在复杂数据类型中使用，例如数组中的对象发生变化。需要注意的是，deep无法监听到数组和对象内部的变化。
 `
+export const vue15 = `
+    数据类型:ref:基本类型、复杂类型和reactive:对象类型、数组类型
+    <br>访问方式:ref:.value 访问基本类型  reactive:直接访问属性
+    <br>响应式实现:ref:Proxy包装.value管理  reactive:Proxy深度代理整个对象
+    <br>嵌套处理:ref:需要手动处理嵌套响应式,reactive:自动深度响应式
+    <br>使用场景:ref:单值响应式（如表单输入值）内存开销小,reactive:复杂对象的状态管理,内存占用相对较高
+    <br>响应式的数据还有如下：
+    <br>computed：用于计算属性。
+    <br>watch 和 watchEffect：用于监听数据变化。
+    <br>toRef 和 toRefs：用于解构或传递响应式属性。
+    <br>shallowRef 和 shallowReactive：用于性能优化。
+    <br>readonly：用于创建只读数据。
+`
