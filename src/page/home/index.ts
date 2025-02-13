@@ -1,6 +1,7 @@
 import { other29,other30,other31 } from './contents/other'
 import { vue1,vue11,vue10,vue8,vue15 } from './contents/vue'
 import { ts19,ts20 } from './contents/ts'
+import { js8 } from './contents/js'
 export const OriginalDataList = [
     {
         title: "HTML",
@@ -34,7 +35,7 @@ export const OriginalDataList = [
             { name: "every()和some()", content: "1.every检测数组中的每个元素是否都满足指定条件，只有全部满足时返回true<br>2.some检测数组中的至少一个元素是否满足指定条件，满足时立即返回true", isContentOpen: false },
             { name: "let、const和var的区别", content: "特性	var	let	const<br>1.作用域:函数作用域,块作用域,块作用域。<br>2.变量提升:	是，提升后值为undefined，是，但不会初始化，是，但不会初始化。<br>3.可修改性:可以重新赋值和重新声明，可以重新赋值，不可重新声明，不可重新赋值，不可重新声明。<br>4.初始值要求:可选，可选，必须初始化。<br>5.绑定特性:不绑定到当前作用域，绑定到当前作用域，绑定到当前作用域。", isContentOpen: false },
             { name: "forEach和map的区别", content: "forEach()方法会针对每一个元素执行提供的函数，对数据的操作会改变原数组，该方法没有返回值；<br>map()方法不会改变原数组的值，返回一个新数组，新数组中的值为原数组调用函数处理之后的值；", isContentOpen: false },
-            { name: "Promise详解", content: "1.Promise有以下三种状态:pending（进行中）,fulfilled（已完成/已成功）,rejected（已失败）<br>2.Promise方法:<br>2.1:then()用于处理resolve的结果<br>2.2:catch()用于处理 reject 的结果。<br>2.3:finally()无论 resolve 还是 reject 都会执行。", isContentOpen: false },
+            { name: "Promise详解", content: js8, isContentOpen: false },
             { name: "同步与异步的分类和宏任务与微任务", content: "1.异步任务有：setTimeout，setInterval，Promise，Async/Await是同步/异步结合。<br>2.宏任务（Macro Task）包括：setTimeout、setInterval、setImmediate、I/O 等。宏任务会被添加到主任务队列。<br>3.微任务（Micro Task）包括：nextTick、Promise.then、MutationObserver、queueMicrotask。微任务的优先级高于宏任务，主线程每次执行一个宏任务后，会先清空微任务队列。", isContentOpen: false },
             { name: "什么是TypeScript", content: "TypeScript是一种由微软开发的开源编程语言，它是JavaScript的超集。TypeScript通过添加静态类型、类、接口和模块等功能，使得在大型应用程序中更容易进行维护和扩展。它可以被编译为纯JavaScript，从而能够在任何支持JavaScript的地方运行。使用TypeScript可以帮助开发人员在编码过程中避免一些常见的错误，并提供更好的代码编辑功能和工具支持。", isContentOpen: false },
             { name: "什么是接口（interface）", content: "接口是用于描述对象的形状的结构化类型。它定义了对象应该包含哪些属性和方法。在TypeScript中，接口可以用来约束对象的结构，以提高代码的可读性和维护性。", isContentOpen: false },
