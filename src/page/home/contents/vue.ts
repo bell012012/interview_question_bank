@@ -44,11 +44,18 @@ export const vue11 = `
     <br>deep：深度监听，发现数据内部的变化，在复杂数据类型中使用，例如数组中的对象发生变化。需要注意的是，deep无法监听到数组和对象内部的变化。
 `
 export const vue15 = `
-    数据类型:ref:基本类型、复杂类型和reactive:对象类型、数组类型
-    <br>访问方式:ref:.value 访问基本类型  reactive:直接访问属性
-    <br>响应式实现:ref:Proxy包装.value管理  reactive:Proxy深度代理整个对象
-    <br>嵌套处理:ref:需要手动处理嵌套响应式,reactive:自动深度响应式
-    <br>使用场景:ref:单值响应式（如表单输入值）内存开销小,reactive:复杂对象的状态管理,内存占用相对较高
+    数据类型:ref:基本类型、复杂类型 reactive:对象类型、数组类型
+    <br>Proxy是对整个对象的代理，而Object.defineProperty只能代理某个属性。
+    <br>对象上新增属性，Proxy可以监听到，Object.defineProperty不能。
+    <br>数组新增修改，Proxy可以监听到，Object.defineProperty不能。
+    <br>若对象内部属性要全部递归代理，Proxy可以只在调用的时候递归，而Object.definePropery需要一次完成所有递归，Proxy相对更灵活，提高性能。
+    <br>
+    <br>reactive 将引用类型值变为响应式，使用Proxy代理整个对象或者数组
+    <br>ref 如果是基本类型数据的话，就是value属性的对象实现响应式，如果是引用型数据，使用reactive的Proxy代理整个对象或者数组
+    <br>watch监听ref时需启用deep: true或直接obj.value
+    <br>watch监听reactive默认深度监听，修改任何嵌套属性都会触发回调
+    <br>只有顶层对象会通过 Proxy 包裹，其余嵌套的对象都没有，因此，只有对象自身的属性是响应式的，下层嵌套的属性都不具有响应式。
+    <br>
     <br>响应式的数据还有如下：
     <br>computed：用于计算属性。
     <br>watch 和 watchEffect：用于监听数据变化。
