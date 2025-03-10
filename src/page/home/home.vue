@@ -261,6 +261,7 @@ const clearInput = () => {
             .selected {
                 border-color: #3498db;
                 color: #3498db;
+                object-fit:fill
             }
         }
     }
