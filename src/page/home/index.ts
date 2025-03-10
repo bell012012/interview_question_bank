@@ -1,4 +1,4 @@
-import { other29,other30,other31 } from './contents/other'
+import { other29,other30,other31,other32,other33 } from './contents/other'
 import { vue1,vue11,vue10,vue8,vue15 } from './contents/vue'
 import { ts19,ts20 } from './contents/ts'
 import { js8 } from './contents/js'
@@ -126,6 +126,8 @@ export const OriginalDataList = [
             { name: "HTTP/1.1 和 HTTP/2 的区别", content: other29, isContentOpen: false },
             { name: "前端如何处理1px的波导问题", content: other30, isContentOpen: false },
             { name: "假如电脑是60Hz那么js一秒可以渲染多条数据", content: other31, isContentOpen: false },
+            { name: "微前端（Micro Frontends）qiankun", content: other32, isContentOpen: false },
+            { name: "微前端（Micro Frontends）wujie", content: other33, isContentOpen: false },
         ],
     },
 ] 
