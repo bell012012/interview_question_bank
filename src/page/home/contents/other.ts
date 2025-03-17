@@ -194,3 +194,33 @@ export const other33 = `
     />
     <br>    
 `
+
+export const other34 = `
+    1. 未清理的全局变量
+    <br>原因：意外创建的全局变量（如未使用 var、let、const 声明的变量）会一直存在于全局作用域，无法被垃圾回收。
+    <br>解决办法：使用严格模式（"use strict"），避免意外创建全局变量。使用 let 或 const 声明变量。
+    <br>
+    <br>2. 未清除的定时器或回调函数
+    <br>原因：setInterval 或 setTimeout 未及时清除，导致回调函数持续占用内存。
+    <br>解决办法：使用 clearInterval 或 clearTimeout 清除定时器。在组件卸载或不再需要时清理定时器。
+    <br>
+    <br>3. 未解绑的事件监听器
+    <br>原因：DOM 元素上绑定的事件监听器未及时移除，导致元素无法被垃圾回收。addEventListener('scroll', 
+    <br>解决办法：使用 removeEventListener 移除事件监听器。
+    <br>
+    <br>4. 闭包中的变量引用
+    <br>原因：闭包会保留对外部函数作用域的引用，导致外部作用域的变量无法被回收。
+    <br>解决办法：避免在闭包中保留不必要的引用。
+    <br>
+    <br>5. 未清理的 DOM 引用
+    <br>原因：JavaScript 中保留了对已移除 DOM 元素的引用，导致 DOM 元素无法被垃圾回收。
+    <br>解决办法：在移除 DOM 元素时，同时清除 JavaScript 中的引用。
+    <br>
+    <br>6. 未释放的缓存或数据结构
+    <br>原因：缓存（如 Map、Set）或大型数据结构未及时清理，导致内存占用持续增加。
+    <br>解决办法：使用 WeakMap 或 WeakSet，允许键值被垃圾回收。
+    <br>
+    <br>7. 循环引用
+    <br>原因：两个或多个对象相互引用，导致垃圾回收器无法识别并回收。
+    <br>解决办法：使用 WeakMap 或 WeakSet 避免强引用。
+`
