@@ -2,6 +2,7 @@ import { other29,other30,other31,other32,other33 } from './contents/other'
 import { vue1,vue11,vue10,vue8,vue15 } from './contents/vue'
 import { ts19,ts20 } from './contents/ts'
 import { js8 } from './contents/js'
+import { html4 } from './contents/html'
 export const OriginalDataList = [
     {
         title: "HTML",
@@ -10,6 +11,7 @@ export const OriginalDataList = [
             { name: "HTML5Canvas元素有什么用？", content: "HTML5的canvas元素是一个用于在网页上绘制图形的容器。通过JavaScript，可以在canvas上绘制各种类型的图形，如线条、矩形、圆形、文本，甚至进行图像处理。canvas广泛应用于游戏开发、数据可视化、动画制作、图像编辑等场景。它提供了一个基于像素的绘图环境，使得网页能够实现动态和交互式的图形效果。<br>总结：用途：绘制图形、动画、图像处理等。应用场景：游戏、数据可视化、图像编辑等。与JavaScript结合：通过JavaScript API控制和操作Canvas内容。", isContentOpen: false },
             { name: "HTML5存储类型有什么区别？", content: "存储容量：cookies：每个cookie的大小通常限制为4KB，适合存储少量的数据（如会话ID、用户标识符等）。localStorage 和 sessionStorage：两者的存储容量通常为5MB以上，比 cookies 的容量要大得多。<br>存储方式：cookies：每次请求都会带上相关的cookie数据，这可能会影响性能，因为每个HTTP请求都需要发送cookies。cookies 主要用于在服务器和客户端之间传递信息。localStorage 和 sessionStorage：这两者仅在客户端存储数据，不会随着HTTP请求发送到服务器，因此对性能的影响较小。<br>数据有效期：cookies：可以设置过期时间，如果没有设置，cookie将在浏览器会话结束时失效（session cookies）。localStorage：数据会一直存在，直到显式删除。sessionStorage：数据仅在当前会话有效，浏览器窗口或标签页关闭时数据会丢失。<br>数据访问范围：cookies：可以被所有同域的页面访问，甚至在不同的窗口和标签页中都可以访问。localStorage 和 sessionStorage：这两者是基于同源策略的，但 localStorage 可以在同一个浏览器的所有标签页中共享，而 sessionStorage 只能在当前标签页内访问。", isContentOpen: false },
             { name: "HTML5有哪些新特性", content: "1. 语义化标签 如header footer nav<br>2. 增强型表单：input 的多个 type<br>3. 新增表单元素：datalist、keygen、output<br>4. 新增表单属性：placehoder、required、min 和 max<br>5. 音频视频：audio、video<br>6. canvas<br>7. 地理定位<br>8. 拖拽<br>9. 本地存储：localStorage - 没有时间限制的数据存储；sessionStorage - 针对一个 session 的数据存储，当用户关闭浏览器窗口后，数据会被删除<br>10. 新事件：onresize、ondrag、onscroll、onmousewheel、onerror、onplay、onpause11. WebSocket：单个 TCP 连接上进行全双工通讯的协议", isContentOpen: false },
+            { name: "canvas和svg的区别，前端可以用来做动画的库或者js有哪些？", content:html4, isContentOpen: false },
         ],
     },
     {
