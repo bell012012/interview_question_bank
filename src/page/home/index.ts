@@ -1,4 +1,4 @@
-import { other29,other30,other31,other32,other33 } from './contents/other'
+import { other27,other29,other30,other31,other32,other33 } from './contents/other'
 import { vue1,vue11,vue10,vue8,vue15 } from './contents/vue'
 import { ts19,ts20 } from './contents/ts'
 import { js8 } from './contents/js'
@@ -123,7 +123,7 @@ export const OriginalDataList = [
             { name: "前端如何处理跨域", content: "跨域主要是由 同源策略 引起的，涉及协议、域名和端口号的不同.<br>1. 使用JSONP,只支持GET请求<br>2.使用CORS,设置服务器响应头Access-Control-Allow-Origin,需要后端支持并正确配置.<br>3.webpack.config.js或者vite.config.js配置proxy<br>4.使用Nginx反向代理,Nginx配置server<br>5.WebSocket", isContentOpen: false },
             { name: "哪些情况会导致内存泄漏", content: "1.意外的全局变量：由于使用未声明的变量，而意外的创建了一个全局变量，而使这个变量一直留在内存中无法被回收。<br>2.被遗忘的计时器或回调函数：设置了 setInterval 定时器，而忘记取消它，如果循环函数有对外部变量的引用的话，那么这个变量会被一直留在内存中，而无法被回收。<br>3.脱离 DOM 的引用：获取一个 DOM 元素的引用，而后面这个元素被删除，由于一直保留了对这个元素的引用，所以它也无法被回收。<br>4.闭包：不合理的使用闭包，从而导致某些变量一直被留在内存当中。", isContentOpen: false },
             { name: "什么是堆，什么是栈", content: "特性	  栈 (Stack)	  堆 (Heap)   <br>1.分配方式:自动分配和释放,手动分配和释放（动态分配）。<br>2.存储内容:局部变量、函数调用信息,对象、数组等复杂数据结构。<br>3.速度:快,慢。<br>4.内存管理:由系统管理，自动释放,程序员管理，依赖垃圾回收机制。<br>5.内存大小:小，受栈空间限制,大，可动态分配。<br>6.存储结构:后进先出 (LIFO),无特定结构，内存地址随机分布。<br>7.适用场景:临时变量、函数调用,动态对象、大数据结构。<br>8.栈: 快速高效，适用于短期存储和简单变量。<br>9.堆: 灵活多样，适用于复杂数据结构和长期存储。", isContentOpen: false },
-            { name: "Webpack 和 Vite", content: "1. 构建方式:<br>Webpack:打包整个项目，生成捆绑包<br>vite:使用原生 ESM，按需编译<br>2.启动速度:<br>Webpack:启动较慢，特别是在大型项目中<br>Vite:启动速度非常快，几秒钟内即可启动<br>3.热更新（HMR）:<br>Webpack:重新打包更新全部的模块<br>Vite:只打包更新修改的模块，不需要刷新页面<br>4.生产构建:<br>Webpack:强大的生产模式优化（Tree Shaking 等）<br>Vite:使用 Rollup 打包，优化结果较好<br>5.配置和插件:<br>Webpack:配置较复杂，插件生态丰富<br>vite:配置简洁，插件支持现代框架<br>6.兼容性:<br>Webpack:兼容性较好，支持旧版浏览器<br>vite:主要支持现代浏览器", isContentOpen: false },
+            { name: "Webpack 和 Vite", content: other27, isContentOpen: false },
             { name: "打开首页出现短暂白屏", content: "1.优化首屏资源：分割代码、压缩资源、使用 CDN。<br>2.提升渲染速度：骨架屏、SSR、预渲染。<br>3.减少不必要的加载：移除无用 CSS/JS，图片懒加载。<br>4.监控与调试：通过 Lighthouse 和开发者工具定位问题。<br>分割代码：使用 Vue 的路由懒加载功能，将非首屏资源按需加载<br>骨架屏:在加载完成前展示骨架屏，减少用户感知白屏时间,加载完成后通过 JavaScript 移除骨架屏<br>静态预渲染:使用 prerender-spa-plugin 生成静态 HTML 文件<br>延迟加载非关键资源:使用 defer 或 async 属性加载script", isContentOpen: false },
             { name: "HTTP/1.1 和 HTTP/2 的区别", content: other29, isContentOpen: false },
             { name: "前端如何处理1px的波导问题", content: other30, isContentOpen: false },

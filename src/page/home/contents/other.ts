@@ -1,3 +1,14 @@
+export const other27 = `
+    Webpack 的首次编译时间较慢，由于 Webpack 需要对整个项目进行打包，构建的过程包括：1.分析依赖关系  2.转换文件（例如 babel-loader，ts-loader，css-loader 等）  3.构建输出
+    <br>Vite 的优势在于它基于现代浏览器的 原生 ES Modules（ESM），它采用了 按需编译 的模式，不会像 Webpack 那样一次性打包整个项目。
+    <br>热更新:
+    <br>Webpack:重新打包更新全部的模块
+    <br>Vite:只打包更新修改的模块，不需要刷新页面
+    <br>生产构建:
+    <br>Webpack:强大的生产模式优化（Tree Shaking 等）
+    <br>Vite:使用 Rollup 打包，优化结果较好
+`
+
 export const other29 = `
     <table border="2">
         <tr>
